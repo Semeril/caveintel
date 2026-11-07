@@ -8,9 +8,10 @@ namespace caveintel
 {
     struct Layer
     {
-        vector<double> values;
+
         function<double(double)> act;
         function<double(double)> actDer;
+        vector<double> values;
         vector<double> weights;
         vector<double> biases;
         size_t size;

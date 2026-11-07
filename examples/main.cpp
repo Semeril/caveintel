@@ -32,12 +32,6 @@ long long getId()
     return ++id;
 }
 
-class QNetwork
-{
-    Network &net;
-    Network target;
-};
-
 main()
 {
     Network nn({1, 16, 32, 32, 16, 1}, ident, [](double)

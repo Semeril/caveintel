@@ -17,10 +17,10 @@ namespace caveintel
 
     class Logger
     {
-        int col = 1, row = 1;
-        unordered_map<long long, tuple<int, string, double, int>> bars;
         ofstream file = ofstream("log.txt");
+        unordered_map<long long, tuple<int, string, double, int>> bars;
         static inline mutex m = mutex();
+        int col = 1, row = 1;
 
         Logger();
 

@@ -4,7 +4,7 @@
 using namespace std;
 using namespace caveintel;
 
-double train(Network &net, const TrainingData &data, const double learning_rate) // Worst complexity O(l*max(n)**2) : n-neurons in one layer, l-layers
+double backprop(Network &net, const TrainingData &data, const double learning_rate) // Worst complexity O(l*max(n)**2) : n-neurons in one layer, l-layers
 {
     auto Ynet = net(data.X);
     if (Ynet.size() != data.Y.size())

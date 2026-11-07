@@ -14,5 +14,5 @@ namespace caveintel
         TrainingData(vector<double> X, function<vector<double>(vector<double>)> f) : X(X), Y(f(X)) {};
     };
 
-    double train(Network &net, const TrainingData &data, const double learning_rate); // Worst complexity O(l*max(n)**2) : n-neurons in one layer, l-layers
+    double backprop(Network &net, const TrainingData &data, const double learning_rate); // Worst complexity O(l*max(n)**2) : n-neurons in one layer, l-layers
 }
