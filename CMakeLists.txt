@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(CaveIntel VERSION 0.1.0 LANGUAGES CXX)
+project(CaveIntel VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -20,15 +20,12 @@ add_library(caveintel
 	src/backprop.cpp
 	src/qnetwork.cpp
 )
-
 add_library(caveintel::caveintel ALIAS caveintel)
 
 target_include_directories(caveintel PUBLIC ./include)
-
 target_link_libraries(caveintel PRIVATE fmt::fmt cereal::cereal)
-
 target_compile_options(caveintel PRIVATE -Wall -Wextra -Wpedantic)
 
-add_executable(example examples/main.cpp)
 
+add_executable(example examples/main.cpp)
 target_link_libraries(example PRIVATE caveintel::caveintel)
