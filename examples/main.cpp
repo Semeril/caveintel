@@ -36,12 +36,9 @@ main()
 {
     Network nn({1, 16, 32, 32, 16, 1}, ident, [](double)
                { return 1.; });
-    vector<TrainingData> data;
     // progressbar(.99, 5);
     auto &log = Logger::get();
     log(LogType::INFO, "succes.");
     log.newBar(1, "smth", .65, 5);
     cin.get();
-
-    // TODO: Q learning, continue with scmdr
 }

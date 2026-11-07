@@ -5,7 +5,14 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_subdirectory(fmt)
+include(FetchContent)
+
+FetchContent_Declare(cereal GIT_REPOSITORY https://github.com/USCiLab/cereal.git GIT_TAG v1.3.2)
+set(SKIP_PERFORMANCE_COMPARISON ON)
+FetchContent_MakeAvailable(cereal)
+
+FetchContent_Declare(fmt GIT_REPOSITORY https://github.com/fmtlib/fmt.git GIT_TAG 12.2.1)
+FetchContent_MakeAvailable(fmt)
 
 add_library(caveintel
 	src/logger.cpp
@@ -18,7 +25,7 @@ add_library(caveintel::caveintel ALIAS caveintel)
 
 target_include_directories(caveintel PUBLIC ./include)
 
-target_link_libraries(caveintel PRIVATE fmt::fmt)
+target_link_libraries(caveintel PRIVATE fmt::fmt cereal::cereal)
 
 target_compile_options(caveintel PRIVATE -Wall -Wextra -Wpedantic)
 
