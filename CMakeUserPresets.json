@@ -1,0 +1,17 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "msys64",
+            "generator": "Ninja",
+            "environment": {
+                "PATH": "e:/msys64/ucrt64/bin"
+            },
+            "binaryDir": "./build",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "e:/msys64/ucrt64/bin/g++.exe",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ]
+}
